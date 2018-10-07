@@ -10,7 +10,10 @@
 
       <Checkbox :checkbox="checkbox" class="UiKitContainer__item"/>
 
-      <Radiobutton :radiobutton="radiobutton" class="UiKitContainer__item" />
+      <Radiobutton v-for="(item, idx) in radiobuttons"
+                   :key="idx"
+                   :radiobutton="item"
+                   class="UiKitContainer__item" />
 
       <Input v-for="(item, idx) in inputs"
              :key="idx"
@@ -62,13 +65,20 @@
           label: 'Чекбокс',
           checked: true
         },
-        radiobutton:
-        {
-          id: 'everybody',
-          label: 'Радиобаттон',
-          name: 'access',
-          checked: true
-        },
+        radiobuttons: [
+          {
+            id: 'radio-1',
+            label: 'Радиобаттон-1',
+            name: 'radio',
+            checked: true
+          },
+          {
+            id: 'radio-2',
+            label: 'Радиобаттон-2',
+            name: 'radio',
+          },
+        ],
+
         inputs: [
           {
             id: 'input-1',

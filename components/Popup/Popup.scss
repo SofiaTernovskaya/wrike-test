@@ -95,6 +95,7 @@
     &-col {
       width: 100%;
       padding-top: 23px;
+      padding-bottom: 23px;
 
       @include respond-to(md) {
         padding-top: 0;
