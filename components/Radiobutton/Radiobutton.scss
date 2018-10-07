@@ -1,0 +1,43 @@
+.Radiobutton {
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__label {
+    position: relative;
+    padding: 0 0 0 20px;
+    font-size: 12px;
+    line-height: 1.67;
+    color: $main-text-color;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% + 1px));
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border: solid 1px rgba(35, 37, 40, 0.4);
+      border-radius: 50%;
+    }
+  }
+
+  &__input:checked + .Radiobutton__label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(calc(-50% + 1px));
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $primary-decoration-color;
+  }
+}

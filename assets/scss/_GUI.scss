@@ -1,0 +1,15 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+input,
+textarea,
+button {
+  outline: none;
+}
+
+button {
+  appearance: none;
+  @include transition();
+}
+

@@ -1,0 +1,17 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__button {
+    min-width: 140px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @include button-primary();
+  }
+
+}

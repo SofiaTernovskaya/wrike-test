@@ -1,0 +1,233 @@
+.Popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(41, 65, 89, 0.9);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 611px;
+    max-height: calc(100% - 40px);
+    max-width: 100%;
+    background: #fff;
+
+    @include respond-to(md) {
+      width: 719px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    padding: 0;
+    background: none;
+    outline: none;
+    border: none;
+
+    &-icon {
+      width: 12px;
+      height: 12px;
+      opacity: 0.64;
+      color: #000000;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding: 22px 31px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: $main-text-color;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16), 0 0 1px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: auto;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      padding-left: 67px;
+      padding-right: 67px;
+    }
+
+    &--edit {
+      justify-content: flex-start;
+
+      @include respond-to(md) {
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 23px;
+        padding-left: 39px;
+        padding-right: 39px;
+      }
+    }
+
+    &-col {
+      width: 100%;
+      padding-top: 23px;
+
+      @include respond-to(md) {
+        padding-top: 0;
+      }
+
+      .Popup__content--edit & {
+
+        @include respond-to(md) {
+          width: 50%;
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+      }
+    }
+
+    &-personal {
+
+      &-description {
+        font-size: 14px;
+        line-height: 1.57;
+        color: #232323;
+      }
+
+      &-row {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 21px;
+        margin-left: -12px;
+        margin-right: -12px;
+
+        .Popup__content--edit & {
+          justify-content: flex-start;
+        }
+      }
+
+      &-col {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 12px;
+        padding-left: 12px;
+
+        .Popup__content--edit & {
+          width: auto;
+        }
+      }
+
+      &-name {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.56;
+        text-align: left;
+        color: $main-text-color;
+
+        &-line {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+
+      &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        &-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 128px;
+          height: 128px;
+          margin-left: auto;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 17px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16), 0 0 1px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      color: $main-text-color;
+    }
+
+    & + & {
+      margin-left: 8px;
+    }
+
+    &--primary {
+      @include button-primary();
+
+      padding-left: 27px;
+      padding-right: 27px;
+    }
+
+    &--secondary {
+      @include button-secondary();
+
+      padding-left: 28px;
+    }
+  }
+
+  &__radiobuttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  &__form-item {
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+}

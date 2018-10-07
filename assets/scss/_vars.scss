@@ -1,0 +1,15 @@
+//colors
+
+$main-text-color: #232528;
+$error-color: #f15866;
+$primary-decoration-color: #4488ff;
+
+//breakpoints
+
+$grid-breakpoints: (
+  xs: 0,
+  md: 768px,
+  lg: 980px,
+) !default;
+
+//transition
